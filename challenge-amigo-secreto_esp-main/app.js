@@ -21,8 +21,15 @@ function sortearAmigo(){
     if (amigosGuardados.length === 0) {
         alert("No has agregado amigos para sortear")
     } else {
-    const amigoAleatorio = Math.floor(Math.random() * listaAmigos.length);
-    resultado.appendChild(listaAmigos[amigoAleatorio].textContent);
+    const calculoAmigo = Math.floor(Math.random() * amigosGuardados.length);
+    const amigoAleatorio = (amigosGuardados[calculoAmigo].textContent);
+
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = ''; // Limpiamos resultado anterior
+    const amigoResultado = document.createElement('li');
+    amigoResultado.textContent = amigoAleatorio;
+    resultado.appendChild(amigoResultado);
+    
 }
 }
 
